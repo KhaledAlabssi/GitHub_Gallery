@@ -4,7 +4,7 @@ import GithubContext from '../../context/github/GithubContext'
 function UserSearch() {
     const [text, setText] = useState('')
     const {users} = useContext(GithubContext)
-    const changeHandler = (e) => setText(e.targer.value)
+    const changeHandler = (e) => setText(e.target.value)
     const submitHandler = (e) => {
         e.preventDefault()
         if(text === '') {
@@ -21,9 +21,9 @@ function UserSearch() {
                     <div className='form-control'>
                         <div className='relative'>
                             <input type='text' className='w-full bg-gray-200 pr-40 input input-lg  text-black'
-                            placeholder='Search' />
+                            placeholder='Search' value={text} onChange={changeHandler} />
                             <button type='submit' 
-                            className='absolute top-0 right-0 rounded-l-none w-36 btn btn-lg bg-success' value={text} onChange={changeHandler}>
+                            className='absolute top-0 right-0 rounded-l-none w-36 btn btn-lg bg-success' >
                                 Go
                             </button>
                         </div>
