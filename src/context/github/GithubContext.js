@@ -17,7 +17,9 @@ export const GithubProvider = ({children}) => {
     const searchUsers = async (text) => {
         setLoading()
         const params = new URLSearchParams({
-            q: text
+            q: text,
+            // sort: 'created',
+            // per_page: 18
         })
 
         const response = await fetch(`https://api.github.com/search/users?${params}`)
